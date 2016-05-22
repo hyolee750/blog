@@ -40,3 +40,5 @@ a blog website that i want to complete in 2016,hope it can be done
     Ctrl + Shift + Z	取消撤销 （必备）
     Ctrl + Shift + U	对选中的代码进行大 / 小写轮流转换 （必备）
     Ctrl + Shift + Enter	自动结束代码，行末自动添加分号 （必备）
+
+刚刚没提交上去，重新测试一下
