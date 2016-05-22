@@ -42,3 +42,30 @@ a blog website that i want to complete in 2016,hope it can be done
     Ctrl + Shift + Enter	自动结束代码，行末自动添加分号 （必备）
 
 刚刚没提交上去，重新测试一下
+2016年5月22日 星期日
+1.今日完成的目标，
+    框架 springmvc+spring+mybatis
+    构建工具 maven
+    开发工具 itellij idea14
+    版本管理工具 git
+ 2.解决问题
+定要记住，src/main/java下的配置文件在编译的时候是默认不加载的
+          因为Mybatis的Mapper映射文件在src/main/java下。所以不会加载，于是报错了
+          org.apache.ibatis.binding.BindingException: Invalid bound statement (not found):
+          碰到上面的问题，记住增加下面的资源配置属性
+   <resources>
+      <resource>
+          <directory>src/main/java</directory>
+          <includes>
+              <include>**/*.xml</include>
+              <include>**/*.properties</include>
+          </includes>
+      </resource>
+      <resource>
+          <directory>src/main/resources</directory>
+          <includes>
+              <include>**/*.xml</include>
+              <include>**/*.properties</include>
+          </includes>
+      </resource>
+  </resources>
