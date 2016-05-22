@@ -1,0 +1,32 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="static/bootstrap/css/bootstrap-theme.min.css">
+  <script src="static/bootstrap/js/jquery-2.2.3.min.js"></script>
+  <script src="static/bootstrap/js/bootstrap.min.js"></script>
+  <script src="static/angular-1.5.5/angular.min.js"></script>
+  <title>环境搭建</title>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h6>用户管理</h6>
+      </div>
+      <div class="panel-body">
+        <c:forEach items="1,2,3" var="index">
+          ${index} <br/>
+        </c:forEach>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
