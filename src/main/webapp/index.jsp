@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="myapp">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -12,8 +12,21 @@
   <script src="static/bootstrap/js/bootstrap.min.js"></script>
   <script src="static/angular-1.5.5/angular.min.js"></script>
   <title>环境搭建</title>
+  <script>
+    angular.module("myapp",[]).controller("default",function($scope){
+      $scope.datas = [{
+        id : 1,
+        name : "zhangsan",
+        age : 18
+      },{
+        id : 2,
+        name : "历史",
+        age : 22
+      }];
+    })
+  </script>
 </head>
-<body>
+<body data-ng-controller="default">
 <div class="container">
   <div class="row">
     <div class="panel panel-default">
@@ -21,10 +34,28 @@
         <h6>用户管理</h6>
       </div>
       <div class="panel-body">
-        <c:forEach items="1,2,3" var="index">
-          ${index} <br/>
-        </c:forEach>
+        <table class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+          </tr>
+          </thead>
+          <tbody >
+            <tr data-ng-repeat="user in datas">
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.age}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="alert alert-info">
+      How are you?
     </div>
   </div>
 </div>

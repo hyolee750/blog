@@ -7,21 +7,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.StringJoiner;
+
 /**
  * Created by Administrator on 2016/5/22.
+ * 用户控制类
  */
 @RestController
+@RequestMapping(value = "/users")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/index")
-    public String hello(){
-        return "hello world";
-    }
-
-    @RequestMapping(value = "/user/{id}")
+    @RequestMapping(value = "/{id}")
     public User findUserById(@PathVariable("id") Integer id){
         return userService.findUserById(id);
     }
